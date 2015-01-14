@@ -1,0 +1,13 @@
+.icon-48-serverss {
+      background-image: url(../images/l_serverss.png);
+      padding-left:60px!important;
+}
+
+.icon-48-servers {
+      background-image: url(../images/l_serverss.png);
+      padding-left:60px!important;
+}
+
+#serversList td:nth-child(6) {
+	-webkit-text-security: disc;
+}
