@@ -33,10 +33,7 @@
        <field name="password" type="text"
                 
             label="COM_PHPMYJOOMLA_FORM_LBL_SERVERS_PASSWORD"
-            description="COM_PHPMYJOOMLA_FORM_DESC_SERVERS_PASSWORD" 
-                
-                
-                 required="true"  /> 
+            description="COM_PHPMYJOOMLA_FORM_DESC_SERVERS_PASSWORD" />
 
          <field
         name="state"
