@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @version     3.0.0
+ * @version     1.1.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2014. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2015. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
  * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
  */
@@ -26,7 +26,7 @@ class PhpmyjoomlaModelServerss extends JModelList {
     public function __construct($config = array()) {
         if (empty($config['filter_fields'])) {
             $config['filter_fields'] = array(
-                                'id', 'a.id',
+                'id', 'a.id',
                 'state', 'a.state',
                 'name', 'a.name',
                 'username', 'a.username',
@@ -55,7 +55,7 @@ class PhpmyjoomlaModelServerss extends JModelList {
         $published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
         $this->setState('filter.state', $published);
 
-        
+
 
         // Load the parameters.
         $params = JComponentHelper::getParams('com_phpmyjoomla');
@@ -97,23 +97,23 @@ class PhpmyjoomlaModelServerss extends JModelList {
 
         // Select the required fields from the table.
         $query->select(
-                $this->getState(
-                        'list.select', 'DISTINCT a.*'
-                )
+            $this->getState(
+                'list.select', 'DISTINCT a.*'
+            )
         );
         $query->from('`#__phpmyjoomla_ext_server_config` AS a');
 
-        
 
-        
 
-		// Filter by published state
-		$published = $this->getState('filter.state');
-		if (is_numeric($published)) {
-			$query->where('a.state = ' . (int) $published);
-		} else if ($published === '') {
-			$query->where('(a.state IN (0, 1))');
-		}
+
+
+        // Filter by published state
+        $published = $this->getState('filter.state');
+        if (is_numeric($published)) {
+            $query->where('a.state = ' . (int) $published);
+        } else if ($published === '') {
+            $query->where('(a.state IN (0, 1))');
+        }
 
         // Filter by search in title
         $search = $this->getState('filter.search');
@@ -122,11 +122,11 @@ class PhpmyjoomlaModelServerss extends JModelList {
                 $query->where('a.id = ' . (int) substr($search, 3));
             } else {
                 $search = $db->Quote('%' . $db->escape($search, true) . '%');
-                
+
             }
         }
 
-        
+
 
 
         // Add the list ordering clause.
@@ -141,7 +141,7 @@ class PhpmyjoomlaModelServerss extends JModelList {
 
     public function getItems() {
         $items = parent::getItems();
-        
+
         return $items;
     }
 

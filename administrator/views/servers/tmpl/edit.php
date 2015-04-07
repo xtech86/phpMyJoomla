@@ -1,8 +1,8 @@
 <?php
 /**
- * @version     3.0.0
+ * @version     1.1.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2014. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2015. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
  * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
  */
@@ -22,7 +22,7 @@ $document->addStyleSheet('components/com_phpmyjoomla/assets/css/phpmyjoomla.css'
 <script type="text/javascript">
     js = jQuery.noConflict();
     js(document).ready(function() {
-        
+
     });
 
     Joomla.submitbutton = function(task)
@@ -31,9 +31,9 @@ $document->addStyleSheet('components/com_phpmyjoomla/assets/css/phpmyjoomla.css'
             Joomla.submitform(task, document.getElementById('servers-form'));
         }
         else {
-            
+
             if (task != 'servers.cancel' && document.formvalidator.isValid(document.id('servers-form'))) {
-                
+
                 Joomla.submitform(task, document.getElementById('servers-form'));
             }
             else {
@@ -53,42 +53,42 @@ $document->addStyleSheet('components/com_phpmyjoomla/assets/css/phpmyjoomla.css'
             <div class="span10 form-horizontal">
                 <fieldset class="adminform">
 
-                    			<div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('id'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('id'); ?></div>
-			</div>
-			<div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('state'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('state'); ?></div>
-			</div>
-			<div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('name'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('name'); ?></div>
-			</div>
-			<div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('username'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('username'); ?></div>
-			</div>
-			<div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('host'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('host'); ?></div>
-			</div>
-			<div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('password'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('password'); ?></div>
-			</div>
+                    <div class="control-group">
+                        <div class="control-label"><?php echo $this->form->getLabel('id'); ?></div>
+                        <div class="controls"><?php echo $this->form->getInput('id'); ?></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label"><?php echo $this->form->getLabel('state'); ?></div>
+                        <div class="controls"><?php echo $this->form->getInput('state'); ?></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label"><?php echo $this->form->getLabel('name'); ?></div>
+                        <div class="controls"><?php echo $this->form->getInput('name'); ?></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label"><?php echo $this->form->getLabel('username'); ?></div>
+                        <div class="controls"><?php echo $this->form->getInput('username'); ?></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label"><?php echo $this->form->getLabel('host'); ?></div>
+                        <div class="controls"><?php echo $this->form->getInput('host'); ?></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label"><?php echo $this->form->getLabel('password'); ?></div>
+                        <div class="controls"><?php echo $this->form->getInput('password'); ?></div>
+                    </div>
 
 
                 </fieldset>
             </div>
         </div>
         <?php echo JHtml::_('bootstrap.endTab'); ?>
-        
+
         <?php if (JFactory::getUser()->authorise('core.admin','phpmyjoomla')) : ?>
-	<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'permissions', JText::_('COM_PHPMYJOOMLA_FIELDSET_RULES', true)); ?>
-		<?php echo $this->form->getInput('rules'); ?>
-	<?php echo JHtml::_('bootstrap.endTab'); ?>
-<?php endif; ?>
+            <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'permissions', JText::_('JGLOBAL_ACTION_PERMISSIONS_LABEL', true)); ?>
+            <?php echo $this->form->getInput('rules'); ?>
+            <?php echo JHtml::_('bootstrap.endTab'); ?>
+        <?php endif; ?>
 
         <?php echo JHtml::_('bootstrap.endTabSet'); ?>
 

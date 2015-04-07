@@ -1,8 +1,8 @@
 <?php
 /**
- * @version     1.0.0
+ * @version     1.1.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2014. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2015. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
  * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
  */
@@ -16,27 +16,27 @@ jimport('joomla.form.formfield');
  */
 class JFormFieldTimecreated extends JFormField
 {
-	/**
-	 * The form field type.
-	 *
-	 * @var		string
-	 * @since	1.6
-	 */
-	protected $type = 'timecreated';
+    /**
+     * The form field type.
+     *
+     * @var		string
+     * @since	1.6
+     */
+    protected $type = 'timecreated';
 
-	/**
-	 * Method to get the field input markup.
-	 *
-	 * @return	string	The field input markup.
-	 * @since	1.6
-	 */
-	protected function getInput() {
+    /**
+     * Method to get the field input markup.
+     *
+     * @return	string	The field input markup.
+     * @since	1.6
+     */
+    protected function getInput() {
         // Initialize variables.
         $html = array();
 
         $time_created = $this->value;
         if (!strtotime($time_created)) {
-            $time_created = date("Y-m-d H:i:s");
+            $time_created = JFactory::getDate()->toSql();
             $html[] = '<input type="hidden" name="' . $this->name . '" value="' . $time_created . '" />';
         }
         $hidden = (boolean) $this->element['hidden'];

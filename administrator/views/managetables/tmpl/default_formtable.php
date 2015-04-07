@@ -1,37 +1,38 @@
 <?php
 /**
- * @version     1.0.0
+ * @version     1.1.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2014. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2015. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
- * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.luisoroz.co */ 
- 
- // No direct access to this file 
- 
- defined('_JEXEC') or die('Restricted access'); 
- ?>
+ * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
+ */
+
+// No direct access to this file
+
+defined('_JEXEC') or die('Restricted access');
+?>
 <div>
-	<div class="overlay" id="overlay" style="display:none;">
-	</div>
-	<div class="box" id="box">
-		<a class="boxclose" id="boxclose"></a>
-		<h1 style="text-align: center;">How to use "phpMyJoomla"</h1>
-		<p style="font-size: 15px; line-height: 25px;">
-			<br/>
-			<span style="font-weight: bold;">Step 1:</span> Choose your server (local, external or quick connection)<br/>
-			<span style="font-weight: bold;">Step 2:</span> Choose one database, one table and click in "Load"<br/>
-			<span style="font-weight: bold;">Step 3:</span> Apply the filters (Show / hide filters).<br/>
-			<span style="font-weight: bold;">Step 4:</span> Select the columns that you don't want to export (Show / hide columns).<br/>
-			<span style="font-weight: bold;">Step 5:</span> Drag and drop the columns and change the place of the columns if needed.<br/>
-			<span style="font-weight: bold;">Step 6:</span> Click to COPY or export in CSV or PDF.
-		</p>
-	</div>
-	<a id="list" style="float: right;" href="#"><button id="activator" class="activator">Instructions / Manual</button></a>
-	<a id="list" style="margin-bottom: 70px;" href="#" class="togglelink"><button onclick="setColor('btnfilters','#eee');" id="btnfilters" class="shfilters">Show / hide filters</button></a>
-	<div class="toggle" style="display: block;">
-		<?php echo $this->objTableGen->renderTableFilter('tbl1'); ?>
-	</div>
+    <div class="overlay" id="overlay" style="display:none;">
+    </div>
+    <div class="box" id="box">
+        <a class="boxclose" id="boxclose"></a>
+        <h1 style="text-align: center;"><?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_TITLE');?></h1>
+        <p style="font-size: 15px; line-height: 25px;">
+            <br/>
+            <span style="font-weight: bold;"><?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP1');?></span> <?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP1_LONG');?><br/>
+            <span style="font-weight: bold;"><?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP2');?></span> <?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP2_LONG');?><br/>
+            <span style="font-weight: bold;"><?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP3');?></span> <?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP3_LONG');?><br/>
+            <span style="font-weight: bold;"><?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP4');?></span> <?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP4_LONG');?><br/>
+            <span style="font-weight: bold;"><?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP5');?></span> <?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP5_LONG');?><br/>
+            <span style="font-weight: bold;"><?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP6');?></span> <?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_STEP6_LONG');?>
+        </p>
+    </div>
+    <a id="list" style="float: right;" href="#"><button id="activator" class="activator"><?php echo JText::_('COM_PHPMYJOOMLA_MANUAL_TEXT_BUTTON');?></button></a>
+    <a id="list" style="margin-bottom: 70px;" href="#" class="togglelink"><button onclick="setColor('btnfilters','#eee');" id="btnfilters" class="shfilters"><?php echo JText::_('COM_PHPMYJOOMLA_SHOWHIDE_TEXT_BUTTON');?></button></a>
+    <div class="toggle" style="display: block;">
+        <?php echo $this->objTableGen->renderTableFilter('tbl1'); ?>
+    </div>
 </div>
 <form id="form" style="margin-top: 50px;">
-	<?php echo $this->objTableGen->renderTableData('tbl1'); ?>
+    <?php echo $this->objTableGen->renderTableData('tbl1'); ?>
 </form>

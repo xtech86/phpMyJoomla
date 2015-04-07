@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
     <name>com_phpmyjoomla</name>
-    <creationDate>January 2015</creationDate>
-    <copyright>Copyright (C) 2014. Todos los derechos reservados.</copyright>
+    <creationDate>April 2015</creationDate>
+    <copyright>Copyright (C) 2015. Todos los derechos reservados.</copyright>
     <license>General Public License GNU version 2 or later. Check LICENSE.txt</license>
     <author>Luis Orozco &amp; Ruel Lastimado</author>
     <authorEmail>luisorozoli@gmail.com, rlastimado@gmail.com</authorEmail>
     <authorUrl>http://www.phpmyjoomla.com</authorUrl>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <description>With this component you can manage, search and export your tables from the  Joomla! backend.</description>
     <scriptfile>script.phpmyjoomla.php</scriptfile>
         
@@ -33,9 +33,10 @@
         <folder>helpers</folder>
         <folder>assets</folder>
     </files>
-    <languages folder="site">
-        
-			<language tag="en-GB">language/en-GB/en-GB.com_phpmyjoomla.ini</language>
+    <languages folder="languages/site">
+
+        <language tag="en-GB">en-GB/en-GB.com_phpmyjoomla.ini</language>
+        <language tag="es-ES">es-ES/es-ES.com_phpmyjoomla.ini</language>
     </languages>
     <administration>
         <menu img="components/com_phpmyjoomla/assets/images/s_com_phpmyjoomla.png" >COM_PHPMYJOOMLA</menu>
@@ -60,12 +61,13 @@
             <folder>sql</folder>
             <folder>tables</folder>
             <folder>views</folder>
-            <folder>language</folder>
         </files>
-        <languages folder="administrator">
-            
-			<language tag="en-GB">language/en-GB/en-GB.com_phpmyjoomla.ini</language>
-			<language tag="en-GB">language/en-GB/en-GB.com_phpmyjoomla.sys.ini</language>
+        <languages folder="languages/administrator">
+
+            <language tag="en-GB">en-GB/en-GB.com_phpmyjoomla.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_phpmyjoomla.sys.ini</language>
+            <language tag="es-ES">es-ES/es-ES.com_phpmyjoomla.ini</language>
+            <language tag="es-ES">es-ES/es-ES.com_phpmyjoomla.sys.ini</language>
         </languages>
     </administration>
     <plugins>

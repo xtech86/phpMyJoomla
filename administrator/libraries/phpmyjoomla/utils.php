@@ -1,21 +1,23 @@
 <?php
 /**
- * @version     1.0.0
+ * @version     1.1.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2014. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2015. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
- * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.luisoroz.co
+ * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
  */
  
 class clsPhpMyJoomlaUtils {
     
     
     protected static $quickconn_host;
+    protected static $quickconn_database;
     protected static $quickconn_username;
     protected static $quickconn_password;
     
-    public static function setQuickConnCredentials($host, $username, $password) {
+    public static function setQuickConnCredentials($host, $database, $username, $password) {
         self::$quickconn_host = $host;
+        self::$quickconn_database = $database;
         self::$quickconn_username = $username;
         self::$quickconn_password = $password;
     }
@@ -44,7 +46,7 @@ class clsPhpMyJoomlaUtils {
                 $option['host']     = self::$quickconn_host;
                 $option['user']     = self::$quickconn_username;  // User for database authentication
                 $option['password'] = self::$quickconn_password;  // Password for database authentication
-                $option['database'] = '';  // Database name
+                $option['database'] = self::$quickconn_database;  // Database name
                 $option['prefix']   = ''; // Database prefix (may be empty)
                 $db = JDatabase::getInstance($option);
                 break;
@@ -55,7 +57,7 @@ class clsPhpMyJoomlaUtils {
                 $option['host']     = $serverconfig->host;
                 $option['user']     = $serverconfig->username;  // User for database authentication
                 $option['password'] = $serverconfig->password;  // Password for database authentication
-                $option['database'] = '';  // Database name
+                $option['database'] = $serverconfig->database;;  // Database name
                 $option['prefix']   = ''; // Database prefix (may be empty)
                 $db = JDatabase::getInstance($option);
         }

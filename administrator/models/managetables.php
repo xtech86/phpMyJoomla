@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @version     3.0.0
+ * @version     1.1.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2014. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2015. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
  * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
  */
@@ -26,7 +26,7 @@ class PhpmyjoomlaModelManagetables extends JModelList {
     public function __construct($config = array()) {
         if (empty($config['filter_fields'])) {
             $config['filter_fields'] = array(
-                
+
             );
         }
 
@@ -49,7 +49,7 @@ class PhpmyjoomlaModelManagetables extends JModelList {
         $published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
         $this->setState('filter.state', $published);
 
-        
+
 
         // Load the parameters.
         $params = JComponentHelper::getParams('com_phpmyjoomla');
@@ -85,15 +85,13 @@ class PhpmyjoomlaModelManagetables extends JModelList {
      * @since	1.6
      */
     protected function getListQuery() {
-		$db		= $this->getDbo();
-		$query	= $db->getQuery(true);
-		return $query;
-	}
+        $db	= $this->getDbo();
+        $query	= $db->getQuery(true); return $query;
+    }
 
-
-	public function getItems() {
+    public function getItems() {
         $items = parent::getItems();
-        
+
         return $items;
     }
 

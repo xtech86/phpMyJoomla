@@ -1,41 +1,50 @@
 <?php
 /**
- * @version     1.0.0
+ * @version     1.1.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2014. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2015. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
- * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.luisoroz.co 
- */ 
- // No direct access to this file
- 
- defined('_JEXEC') or die('Restricted access'); 
- 
-?> 
+ * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
+ */
+// No direct access to this file
+
+defined('_JEXEC') or die('Restricted access');
+
+?>
 
 <?php echo $this->loadTemplate('header'); ?>
 <body style="font-family: 'Arial';">
 <div id="container">
-	<div class="span12">
-		<div class="span4">
-			<img src="components/com_phpmyjoomla/assets/images/phpmyjoomla/logo_small.png" alt="phpMyJoomla logo" />
-		</div>
-		<div class="span6">
-			<h2>Search, manage and export your tables in 3 steps!</h2>
-			<a href="http://www.phpmyjoomla.com/forum" target="_blank"><button type="button" class="btn btn-success"><i class="icon-users pad-r10"></i>FORUM</button></a>
-			<a href="http://www.phpmyjoomla.com/support" target="_blank"><button type="button" class="btn btn-success"><i class="icon-question-sign pad-r10"></i>SUPPORT</button></a>
-			<a href="http://www.phpmyjoomla.com" target="_blank"><button type="button" class="btn btn-info"><i class="icon-book pad-r10"></i>DOCUMENTATION</button></a>
-		</div>
-		<div class="span2 esbutton">
-			<img src="components/com_phpmyjoomla/assets/images/phpmyjoomla/compat_30.png" alt="Joomla Compact 3.x logo" />
-			<a href="index.php?option=com_phpmyjoomla&view=serverss"><button type="button" class="btn btn-primary"><i class="icon-cube pad-r10"></i>EXTERNAL SERVERS</button></a>
-		</div>
-	</div>
-	<?php 
-            echo $this->loadTemplate('formfilters');
-            if ($this->select_table != PMJ_TABLES_NO_SELECT) {
-                echo $this->loadTemplate('formtable');
-            }
-        ?>
+    <div class="span12">
+        <div class="span4">
+            <img src="components/com_phpmyjoomla/assets/images/phpmyjoomla/logo_small.png" alt="phpMyJoomla logo" />
+        </div>
+        <div class="span5">
+            <h2><?php echo JText::_('COM_PHPMYJOOMLA_TEXT_PRINCIPALTITLE');?></h2>
+            <a href="http://www.phpmyjoomla.com/forum" target="_blank"><button type="button" class="btn btn-success"><i class="fa fa-users pad-r10"></i><?php echo JText::_('COM_PHPMYJOOMLA_TEXTBUTTOM_FORUM');?></button></a>
+            <a href="http://www.phpmyjoomla.com/support" target="_blank"><button type="button" class="btn btn-success"><i class="fa fa-question-circle pad-r10"></i><?php echo JText::_('COM_PHPMYJOOMLA_TEXTBUTTOM_SUPPORT');?></button></a>
+            <a href="http://www.phpmyjoomla.com" target="_blank"><button type="button" class="btn btn-info"><i class="fa fa-book pad-r10"></i><?php echo JText::_('COM_PHPMYJOOMLA_TEXTBUTTOM_DOCUMENTATION');?></button></a>
+        </div>
+        <div class="span3 esbutton fright">
+            <!-- Link to open the modal -->
+            <a class="fright" href="#ex1" rel="modal:open"><div id="phpmyjoomla_version">
+                    <?php echo JText::_('COM_PHPMYJOOMLA_VERSION');?>
+                    <i class="fa fa-info-circle"></i>
+            </a>
+            <br />
+            <img class="fright" src="components/com_phpmyjoomla/assets/images/phpmyjoomla/compat_30.png" alt="Joomla Compact 3.x logo" />
+        </div>
+        <br />
+        <a href="index.php?option=com_phpmyjoomla&view=serverss"><button type="button" class="btn btn-primary fright"><i class="fa fa-cubes pad-r10"></i><?php echo JText::_('COM_PHPMYJOOMLA_TEXTBUTTOM_EXTERNALSERVERS');?></button></a>
+    </div>
+</div>
+<?php
+echo $this->loadTemplate('formfilters');
+echo $this->loadTemplate('modal_version');
+if ($this->select_table != PMJ_TABLES_NO_SELECT) {
+    echo $this->loadTemplate('formtable');
+}
+?>
 </div>
 <?php echo $this->loadTemplate('footer'); ?>
 </body>
@@ -85,13 +94,13 @@
             if (currentDataAttrib === undefined) {
                 currentDataAttrib = '<?php echo PMJ_SERVER_LOCALHOST?>';
             }
-            $(this).val(currentDataAttrib); 
+            $(this).val(currentDataAttrib);
             return false;
         }
-        
+
         $.data(this, 'current', $(this).val()); // Set default current property pointing to selected server
     });
-    
+
     $("#select_db" ).change(function() {
         showLoadingDiv();
         var blnAjaxSubmit = window.blnAjaxSubmission;
@@ -115,7 +124,7 @@
             $("#frmselectserverdbtable").submit();
         }
     });
-    
+
     $("#load_table" ).click(function() {
         $("#loaded_server").val($("#select_server").val());
         $("#loaded_db").val($("#select_db").val());
@@ -123,7 +132,7 @@
         showLoadingDiv();
         $("#frmselectserverdbtable").submit();
     });
-    
+
     $("#check_conn" ).click(function() {
         showLoadingDiv();
         var blnAjaxSubmit = window.blnAjaxSubmission;
@@ -151,7 +160,7 @@
             $("#frmselectserverdbtable").submit();
         }
     });
-    
+
     function checkConnection() {
         var blnOK = false;
         $.ajax({
@@ -168,22 +177,23 @@
                 }
             }
         });
-        
+
         return blnOK;
     }
-    
+
     function getServerFormDetails() {
-        var dataServerForm = { 
-                'flag_serverchange': $("#flag_serverchange").val(),
-                'select_server': $("#select_server").val(),
-                'select_db': $("#select_db").val(),
-                'select_table': $("#select_table").val(),
-                'loaded_server': $("#loaded_server").val(),
-                'loaded_db': $("#loaded_db").val(),
-                'loaded_table': $("#loaded_table").val(),
-                'quickconn_host': $("#quickconn_host").val(),
-                'quickconn_username': $("#quickconn_username").val(),
-                'quickconn_password': $("#quickconn_password").val()
+        var dataServerForm = {
+            'flag_serverchange': $("#flag_serverchange").val(),
+            'select_server': $("#select_server").val(),
+            'select_db': $("#select_db").val(),
+            'select_table': $("#select_table").val(),
+            'loaded_server': $("#loaded_server").val(),
+            'loaded_db': $("#loaded_db").val(),
+            'loaded_table': $("#loaded_table").val(),
+            'quickconn_host': $("#quickconn_host").val(),
+            'quickconn_database': $("#quickconn_database").val(),
+            'quickconn_username': $("#quickconn_username").val(),
+            'quickconn_password': $("#quickconn_password").val()
         }
         return dataServerForm;
     }

@@ -1,7 +1,7 @@
 /**
- * @version     1.0.0
+ * @version     1.1.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2014. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2015. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
  * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
  */
@@ -65,6 +65,37 @@ div.list-footer div.counter{
     display: inline-block;
 }
 
+div.filter-select.hide{
+    display: none;
+}
 
+div.filter-select.show{
+    display: block;
+}
 
+div.filter-search , div.filter-select {
+    float: left;
+    clear: both;
+}
 
+div.filter-select .fltlft{
+    float: left;
+    clear: both;
+}
+
+div.field-filter{
+    float: left;
+    margin: 10px;
+}
+
+#filter-bar div.fltrt div.button2-left .blank a {
+    margin-top: 0 !important;
+}
+
+button.open{
+    font-weight: bold;
+}
+
+div.field-filter:first-of-type{
+    margin-left: 0;
+}

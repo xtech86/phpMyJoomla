@@ -1,10 +1,11 @@
 <?php
+
 /**
- * @version     1.0.0
+ * @version     1.1.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2014. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2015. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
- * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.luisoroz.co
+ * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
  */
  
 // No direct access
@@ -29,6 +30,7 @@ class phpMyJoomlaViewManagetables extends JViewLegacy {
     protected $select_table;
     
     protected $quickconn_host;
+    protected $quickconn_database;
     protected $quickconn_username;
     protected $quickconn_password;
     
@@ -49,9 +51,10 @@ class phpMyJoomlaViewManagetables extends JViewLegacy {
         $this->ajax= JRequest::getVar('ajax', false);
         $this->ajaxAction= JRequest::getVar('ajaxaction');
         $this->quickconn_host = JRequest::getVar('quickconn_host','');
+        $this->quickconn_database = JRequest::getVar('quickconn_database','');
         $this->quickconn_username = JRequest::getVar('quickconn_username','');
         $this->quickconn_password = JRequest::getVar('quickconn_password','');
-        clsPhpMyJoomlaUtils::setQuickConnCredentials($this->quickconn_host,$this->quickconn_username,$this->quickconn_password);
+        clsPhpMyJoomlaUtils::setQuickConnCredentials($this->quickconn_host,$this->quickconn_database,$this->quickconn_username,$this->quickconn_password);
         $flag_serverchange= JRequest::getVar('flag_serverchange',0);
         
         /*** Get default DB and Table Selection ***/
@@ -77,6 +80,7 @@ class phpMyJoomlaViewManagetables extends JViewLegacy {
         if ($this->blnHasRenderableStructure) {
             $additionalParams = array();
             $additionalParams['quickconn_host'] = $this->quickconn_host;
+            $additionalParams['quickconn_database'] = $this->quickconn_database;
             $additionalParams['quickconn_username'] = $this->quickconn_username;
             $additionalParams['quickconn_password'] = $this->quickconn_password;
             $this->objTableGen->addTable('tbl1',$this->loaded_table, $this->loaded_db, $this->loaded_server,$additionalParams);

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @version     3.0.0
+ * @version     1.1.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2014. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2015. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
  * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
  */
@@ -107,29 +107,29 @@ class PhpmyjoomlaViewServerss extends JViewLegacy {
         JHtmlSidebar::setAction('index.php?option=com_phpmyjoomla&view=serverss');
 
         $this->extra_sidebar = '';
-        
-		JHtmlSidebar::addFilter(
 
-			JText::_('JOPTION_SELECT_PUBLISHED'),
+        JHtmlSidebar::addFilter(
 
-			'filter_published',
+            JText::_('JOPTION_SELECT_PUBLISHED'),
 
-			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), "value", "text", $this->state->get('filter.state'), true)
+            'filter_published',
 
-		);
+            JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), "value", "text", $this->state->get('filter.state'), true)
+
+        );
 
     }
 
-	protected function getSortFields()
-	{
-		return array(
-		'a.id' => JText::_('JGRID_HEADING_ID'),
-		'a.state' => JText::_('JSTATUS'),
-		'a.name' => JText::_('COM_PHPMYJOOMLA_SERVERSS_NAME'),
-		'a.username' => JText::_('COM_PHPMYJOOMLA_SERVERSS_USERNAME'),
-		'a.host' => JText::_('COM_PHPMYJOOMLA_SERVERSS_HOST'),
-		'a.password' => JText::_('COM_PHPMYJOOMLA_SERVERSS_PASSWORD'),
-		);
-	}
+    protected function getSortFields()
+    {
+        return array(
+            'a.id' => JText::_('JGRID_HEADING_ID'),
+            'a.state' => JText::_('JSTATUS'),
+            'a.name' => JText::_('COM_PHPMYJOOMLA_SERVERSS_NAME'),
+            'a.username' => JText::_('COM_PHPMYJOOMLA_SERVERSS_USERNAME'),
+            'a.host' => JText::_('COM_PHPMYJOOMLA_SERVERSS_HOST'),
+            'a.password' => JText::_('COM_PHPMYJOOMLA_SERVERSS_PASSWORD'),
+        );
+    }
 
 }
