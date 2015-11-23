@@ -7,6 +7,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 ### Removed
 
+## [1.5.0] - 2015-11-23
+### Changed/Update
+- Updated css files.
+- Updated js files.
+
 ## [1.1.0] - 2015-04-06
 ### Added
 - Spanish language.

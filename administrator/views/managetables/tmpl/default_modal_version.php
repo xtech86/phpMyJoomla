@@ -25,12 +25,20 @@ defined('_JEXEC') or die('Restricted access');
     </p>
     <br />
     <p>
+        <span style="font-weight: bold;font-size: 20px;">## [1.5.0] - 2015-11-23</span><br />
+        <span style="font-weight: bold;font-size: 15px;">### Changed/Update</span><br />
+        - Updated css files.<br />
+        - Updated js files.
+    </p>
+    <br />
+    <p>
         <span style="font-weight: bold;font-size: 20px;">## [1.1.0] - 2015-04-06</span><br />
         <span style="font-weight: bold;font-size: 15px;">### Added</span><br />
         - Spanish language.<br />
         - Chagelog file.<br />
         - Font awesome 4.3.0.
     </p>
+    <br />
     <p>
         <span style="font-weight: bold;font-size: 15px;">### Changed/Updated</span><br />
         - Changed icons.<br />
