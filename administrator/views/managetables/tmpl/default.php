@@ -1,8 +1,8 @@
 <?php
 /**
- * @version     1.1.0
+ * @version     1.5.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2015. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2016. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
  * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
  */
@@ -21,7 +21,7 @@ defined('_JEXEC') or die('Restricted access');
         </div>
         <div class="span5">
             <h2><?php echo JText::_('COM_PHPMYJOOMLA_TEXT_PRINCIPALTITLE');?></h2>
-            <a href="http://www.phpmyjoomla.com/forum" target="_blank"><button type="button" class="btn btn-success"><i class="fa fa-users pad-r10"></i><?php echo JText::_('COM_PHPMYJOOMLA_TEXTBUTTOM_FORUM');?></button></a>
+            <a href="http://www.phpmyjoomla.com/support" target="_blank"><button type="button" class="btn btn-success"><i class="fa fa-users pad-r10"></i><?php echo JText::_('COM_PHPMYJOOMLA_TEXTBUTTOM_FORUM');?></button></a>
             <a href="http://www.phpmyjoomla.com/support" target="_blank"><button type="button" class="btn btn-success"><i class="fa fa-question-circle pad-r10"></i><?php echo JText::_('COM_PHPMYJOOMLA_TEXTBUTTOM_SUPPORT');?></button></a>
             <a href="http://www.phpmyjoomla.com" target="_blank"><button type="button" class="btn btn-info"><i class="fa fa-book pad-r10"></i><?php echo JText::_('COM_PHPMYJOOMLA_TEXTBUTTOM_DOCUMENTATION');?></button></a>
         </div>

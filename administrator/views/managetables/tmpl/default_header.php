@@ -1,8 +1,8 @@
 <?php
 /**
- * @version     1.1.0
+ * @version     1.5.0
  * @package     com_phpmyjoomla
- * @copyright   Copyright (C) 2015. Todos los derechos reservados.
+ * @copyright   Copyright (C) 2016. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
  * @author      Luis Orozco & Ruel Lastimado <luisorozoli@gmail.com, rlastimado@gmail.com> - http://www.phpmyjoomla.com
  */
@@ -24,7 +24,7 @@ $doc->addStyleSheet(JURI::root() . 'administrator/components/com_phpmyjoomla/vie
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
 <?php
 $doc->addScript(JURI::root() . 'administrator/components/com_phpmyjoomla/views/managetables/tmpl/assets/js/jquery.js');
-$doc->addScript(JURI::root() . 'administrator/components/com_phpmyjoomla/views/managetables/tmpl/assets/js/jquery-1.11.2.min.js');
+$doc->addScript(JURI::root() . 'administrator/components/com_phpmyjoomla/views/managetables/tmpl/assets/js/jquery-1.11.3.min.js');
 $doc->addScript(JURI::root() . 'administrator/components/com_phpmyjoomla/views/managetables/tmpl/assets/js/jquery.dataTables.min.js');
 $doc->addScript(JURI::root() . 'administrator/components/com_phpmyjoomla/views/managetables/tmpl/assets/js/dataTables.jqueryui.js');
 $doc->addScript(JURI::root() . 'administrator/components/com_phpmyjoomla/views/managetables/tmpl/assets/js/ZeroClipboard.js');
@@ -39,7 +39,7 @@ $doc->addScript(JURI::root() . 'media/jui/js/jquery.min.js');
 $doc->addScript(JURI::root() . 'media/jui/js/jquery-noconflict.js');
 $doc->addScript(JURI::root() . 'media/jui/js/jquery-migrate.min.js');
 $doc->addScript(JURI::root() . 'media/jui/js/bootstrap.min.js');
-$doc->addScriptVersion(JURI::root() . 'media/betterpreview/js/script.min.js');
+//$doc->addScriptVersion(JURI::root() . 'media/betterpreview/js/script.min.js');
 $doc->addScript(JURI::root() . 'media/system/js/core.js');
 ?>
 <div id="ajax_shield" name="export_shield" class="clean_background"></div>
