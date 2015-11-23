@@ -1,7 +1,21 @@
+/*! DataTables jQuery UI integration
+ * ©2011-2014 SpryMedia Ltd - datatables.net/license
+ */
 
-(function(){
+/*
+ * IMPORTANT
+ * This file has now been deprecated and replaced by support for the styling
+ * integration with jQuery UI in the DataTables core software and its
+ * accompanying extensions. Please refer to the styling documentation for
+ * details:
+ * 	https://datatables.net/manual/styling/
+ */
+(function(window, document, undefined){
 
-var DataTable = $.fn.dataTable;
+var factory = function( $, DataTable ) {
+"use strict";
+
+
 var sort_prefix = 'css_right ui-icon ui-icon-';
 var toolbar_prefix = 'fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-';
 
@@ -16,6 +30,8 @@ $.extend( true, DataTable.defaults, {
 
 
 $.extend( DataTable.ext.classes, {
+	"sWrapper":            "dataTables_wrapper dt-jqueryui",
+
 	/* Full numbers paging buttons */
 	"sPageButton":         "fg-button ui-button ui-state-default",
 	"sPageButtonActive":   "ui-state-disabled",
@@ -40,11 +56,11 @@ $.extend( DataTable.ext.classes, {
 
 	/* Misc */
 	"sHeaderTH":  "ui-state-default",
-	"sFooterTH":  "ui-state-default",
+	"sFooterTH":  "ui-state-default"
 } );
 
 
-$.fn.DataTable.ext.renderer.header.jqueryui = function ( settings, cell, column, classes ) {
+DataTable.ext.renderer.header.jqueryui = function ( settings, cell, column, classes ) {
 	// Calculate what the unsorted class should be
 	var noSortAppliedClass = sort_prefix+'carat-2-n-s';
 	var asc = $.inArray('asc', column.asSorting) !== -1;
@@ -70,7 +86,11 @@ $.fn.DataTable.ext.renderer.header.jqueryui = function ( settings, cell, column,
 		.appendTo( cell );
 
 	// Attach a sort listener to update on sort
-	$(settings.nTable).on( 'order.dt', function ( e, settings, sorting, columns ) {
+	$(settings.nTable).on( 'order.dt', function ( e, ctx, sorting, columns ) {
+		if ( settings !== ctx ) {
+			return;
+		}
+
 		var colIdx = column.idx;
 
 		cell
@@ -115,6 +135,21 @@ if ( DataTable.TableTools ) {
 	} );
 }
 
+}; // /factory
 
-}());
 
+// Define as an AMD module if possible
+if ( typeof define === 'function' && define.amd ) {
+	define( ['jquery', 'datatables'], factory );
+}
+else if ( typeof exports === 'object' ) {
+    // Node/CommonJS
+    factory( require('jquery'), require('datatables') );
+}
+else if ( jQuery ) {
+	// Otherwise simply initialise as normal, stopping multiple evaluation
+	factory( jQuery, jQuery.fn.dataTable );
+}
+
+
+})(window, document);
