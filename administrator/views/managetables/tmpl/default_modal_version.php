@@ -1,6 +1,6 @@
 <?php
 /**
- * @version     1.5.0
+ * @version     1.5.1
  * @package     com_phpmyjoomla
  * @copyright   Copyright (C) 2016. Todos los derechos reservados.
  * @license     Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt
@@ -22,6 +22,12 @@ defined('_JEXEC') or die('Restricted access');
         ### Fixed<br />
         ### Added<br />
         ### Removed
+    </p>
+    <br />
+    <p>
+        <span style="font-weight: bold;font-size: 20px;">## [1.5.1] - 2016-01-11</span><br />
+        <span style="font-weight: bold;font-size: 15px;">### Changed/Update</span><br />
+        - Updated js files.
     </p>
     <br />
     <p>

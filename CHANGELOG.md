@@ -7,6 +7,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 ### Removed
 
+## [1.5.1] - 2016-01-11
+### Changed/Update
+- Updated js files.
+
 ## [1.5.0] - 2015-11-23
 ### Changed/Update
 - Updated css files.
@@ -25,4 +29,3 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.0.0] - 2015-03-23
 ### Added
 - Firt version 1.0.0 (Beta).
-
